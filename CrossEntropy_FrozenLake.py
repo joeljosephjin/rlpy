@@ -79,7 +79,6 @@ def batcher(env):
 
 def filter_batches(batch, percentile = PERCENTILE):
 	Gs = [sum([r*(GAMMA**n) for n,r in enumerate(buffer["r"])]) for buffer in batch]
-	print(Gs)
 	G_bound = np.percentile(Gs, PERCENTILE)
 	G_mean = float(np.mean(Gs))
 
